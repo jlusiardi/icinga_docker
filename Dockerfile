@@ -26,5 +26,6 @@ COPY	icinga.cfg	/etc/icinga/icinga.cfg
 VOLUME  ["/etc/icinga/objects"]
 COPY	main.cfg	/main.cfg
 COPY	start.sh	/start.sh
+RUN	usermod -G nagios www-data
 
 CMD	/bin/sh start.sh
